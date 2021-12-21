@@ -12,7 +12,7 @@ const VerificationRequest = require("../db/models/verificationRequest");
 
 class StatsController {
   constructor() {
-    let verificationConfig = settings.rules.find(r => r.name === "Anonymice Verifier");
+    let verificationConfig = settings.rules.find(r => r.name === "FoxGame Verifier");
     this.roleConfiguration = verificationConfig.executor.config.roles;
   }
   async getTotal(req, res) {
@@ -25,8 +25,8 @@ class StatsController {
       .end();
   }
 
-  async getGenesis(req, res) {
-    let roleId = this.roleConfiguration.find(r => r.name === "Genesis Mice").id;
+  async getGen0(req, res) {
+    let roleId = this.roleConfiguration.find(r => r.name === "Gen0").id;
     const result = await User.count({
       status: { $elemMatch: { roleId: roleId, qualified: true } },
     });
@@ -38,8 +38,8 @@ class StatsController {
       .end();
   }
 
-  async getBabies(req, res) {
-    let roleId = this.roleConfiguration.find(r => r.name === "Baby Mice").id;
+  async getGen1(req, res) {
+    let roleId = this.roleConfiguration.find(r => r.name === "Gen1").id;
     const result = await User.count({
       status: { $elemMatch: { roleId: roleId, qualified: true } },
     });
