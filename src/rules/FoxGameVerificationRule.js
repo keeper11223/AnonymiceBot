@@ -1,3 +1,10 @@
+/*##############################################################################
+# File: FoxGameVerificationRule.js                                             #
+# Project: AnonymiceDiscordBot                                                 #
+# Author(s): Oliver Renner (@_orenner) & slingn.eth (@slingncrypto)            #
+# © 2021                                                                       #
+###############################################################################*/
+
 const logger = require("../utils/logger");
 const discordBot = require("../discordBot");
 
